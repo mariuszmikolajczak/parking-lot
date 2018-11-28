@@ -10,6 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2018_11_28_152319) do
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "parking_spot_id", null: false
+    t.datetime "from", null: false
+    t.datetime "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parking_spot_id"], name: "index_bookings_on_parking_spot_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.integer "number", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parking_spots", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "spot_size_id", null: false
+    t.integer "level_id", null: false
+    t.integer "number", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["level_id"], name: "index_parking_spots_on_level_id"
+    t.index ["spot_size_id"], name: "index_parking_spots_on_spot_size_id"
+  end
+
+  create_table "spot_sizes", force: :cascade do |t|
+    t.integer "size", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
