@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+- rvm install 2.5.3
+- bundle
+- rails db:migrate
+- rails s
 
-* Ruby version
+## Tests and checkstyle
 
-* System dependencies
+- rspec
+- rubocop
 
-* Configuration
+## ToDo
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Attach `SpacialParkingSpotService` to the controller ParkingController
+- Make `SpecialParkingSpotService#max_profit` more efficient
