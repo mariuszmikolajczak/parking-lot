@@ -1,0 +1,18 @@
+inherit_from: .rubocop_todo.yml
+
+Metrics/LineLength:
+  Max: 120
+
+Style/BlockComments:
+  Exclude:
+  - spec/spec_helper.rb
+
+Metrics/BlockLength:
+  Exclude:
+  - db/schema.rb
+
+Style/Documentation:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false

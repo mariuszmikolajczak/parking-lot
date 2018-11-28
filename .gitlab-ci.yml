@@ -1,0 +1,29 @@
+image: ruby:2.5.3
+
+#services:
+#- postgres:latest
+
+variables:
+#  POSTGRES_DB: test_db
+#  POSTGRES_USER: runner
+#  POSTGRES_PASSWORD: ""
+  RAILS_ENV: test
+  SECRET_KEY_BASE: b9a13ea1a2dfb3608ba5d17ab500ef859115984bd64207092c06bdfd976c3c837cdee9805ddf99ba3dc17f543bead9384aeaa03f5d008bb76ab8bb23fe910d42
+
+before_script:
+#- apt-get update -qq && apt-get install -y -qq nodejs postgresql postgresql-contrib libpq-dev cmake
+- ruby -v
+- which ruby
+- gem install bundler --no-ri --no-rdoc
+- bundle install --jobs $(nproc)  "${FLAGS[@]}"
+#- cp config/database.yml.gitlab config/database.yml
+#- cp .env-example .env.test
+- bundle exec rake db:create db:schema:load
+
+#rspec:
+#  script:
+#  - bundle exec rspec
+
+rubocop:
+  script:
+  - bundle exec rubocop
