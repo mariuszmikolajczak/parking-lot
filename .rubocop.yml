@@ -16,3 +16,4 @@ Style/DoubleNegation:
 AllCops:
   Exclude:
   - db/schema.rb
+  - spec/**/*

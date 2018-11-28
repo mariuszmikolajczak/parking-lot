@@ -20,9 +20,9 @@ before_script:
 #- cp .env-example .env.test
 - bundle exec rake db:create db:schema:load
 
-#rspec:
-#  script:
-#  - bundle exec rspec
+rspec:
+  script:
+  - bundle exec rspec
 
 rubocop:
   script:
