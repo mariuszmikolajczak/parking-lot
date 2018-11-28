@@ -29,7 +29,7 @@ module V1
     private
 
     def booking_params
-      params.permit(:spot_size_id, :level_id, :number, :name)
+      params.permit(:parking_spot_id, :from, :to)
     end
 
     def set_booking

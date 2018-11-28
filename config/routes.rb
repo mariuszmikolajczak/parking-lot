@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :spot_sizes
     resources :parking_spots
     resources :bookings
+
+    post '/find_free_parking_spot', to: 'parking#find_free_parking_spot', as: :parking_find_free_parking_spot
   end
 end
