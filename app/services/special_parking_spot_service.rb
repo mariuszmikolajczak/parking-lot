@@ -9,7 +9,7 @@ class SpecialParkingSpotService
     not_efficient
   end
 
-  def not_efficient
+  def not_efficient # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     sorted_cars = cars.dup.sort_by(&:size)
 
     results = []
