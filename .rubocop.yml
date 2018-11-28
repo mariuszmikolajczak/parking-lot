@@ -7,12 +7,12 @@ Style/BlockComments:
   Exclude:
   - spec/spec_helper.rb
 
-Metrics/BlockLength:
-  Exclude:
-  - db/schema.rb
-
 Style/Documentation:
   Enabled: false
 
 Style/DoubleNegation:
   Enabled: false
+
+AllCops:
+  Exclude:
+  - db/schema.rb
