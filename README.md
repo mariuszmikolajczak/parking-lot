@@ -1,5 +1,7 @@
 # README
 
+This is a recruitment task.
+
 ## Installation
 
 - rvm install 2.5.3
